@@ -35,17 +35,17 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-bottom: calc(var(--vh, 1vh) * 4.5);
     }
-    &__first-page {}
     &__description {
         font-size: 3.9vmin;
         line-height: 2.8em;
         font-weight: 300;
         letter-spacing: 0.05em;
-        font-size: calc(var(--vh, 1vh) * 1.95);
-        text-align: center;
         margin-bottom: calc(var(--vh, 1vh) * 5);
+        text-align: center;
+        &\--desktop {
+            display: none;
+        }
     }
     &__schedule {
         margin-bottom: 0;
@@ -60,13 +60,13 @@
         letter-spacing: 0.05em;
     }
     &__artists {
-        margin-bottom: calc(var(--vh, 1vh) * 6);
+        margin-bottom: calc(var(--vh, 1vh) * 5);
     }
     &__director {
         margin-bottom: calc(var(--vh, 1vh) * 2.5);
     }
     &__small-text {
-        color: black;
+        color: #000000;
         font-size: calc(var(--vh, 1vh) * 1.95);
         line-height: 2.8em;
         font-weight: 300;
@@ -74,10 +74,6 @@
         display: block;
         text-align: center;
         text-decoration: none;
-        transition: color 0.3s;
-        &:hover {
-            color: #666;
-        }
     }
     &__second-page-text {
         color: #000000;
@@ -92,10 +88,9 @@
     &__email {
         color: black;
         text-decoration: none;
-        margin-bottom: calc(var(--vh, 1vh) * 7);
     }
     &__address {
-        margin-bottom: calc(var(--vh, 1vh) * 8.5);
+        margin-bottom: calc(var(--vh, 1vh) * 8);
     }
     &__instagram {
         display: inline-block;

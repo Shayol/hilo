@@ -5,7 +5,7 @@
         height: 100%;
         width: 100%;
         padding-top: 11.8vmin;
-        padding-left: 4vmax;
+        padding-left: 3vmax;
         position: absolute;
         top: 0;
         left: 0;
@@ -20,15 +20,6 @@
             font-size: 0.5279vw;
             line-height: 3em;
             letter-spacing: 0.0666em;
-        }
-    }
-    @media (max-width: $tablet) and (orientation: landscape),
-    (device-width: 1366px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape),
-    (min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-        padding-top: 24.544vmin;
-        padding-left: 8.32vmax;
-        &__text {
-            font-size: 1.1vw;
         }
     }
 }

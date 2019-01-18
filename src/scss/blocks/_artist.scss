@@ -15,7 +15,8 @@
             justify-content: flex-end;
             left: 0;
             bottom: 0;
-            opacity: 0; // transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
+            opacity: 0;
+            transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
             top: 0;
             left: 0;
             opacity: 0;
@@ -44,23 +45,14 @@
             text-align: left;
             font-size: 0.5279vw;
             letter-spacing: 0.1333em;
-            line-height: 2em; // transition: opacity .85s, color 0.3s;
+            line-height: 2em;
+            transition: opacity .85s, color 0.3s;
             color: #9b9b9b;
             text-decoration: none;
             display: block;
             &:hover {
                 color: black;
             }
-        }
-    }
-    @media (max-width: $tablet) and (orientation: landscape),
-    (device-width: 1366px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape),
-    (min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-        &__name {
-            font-size: 1.1vw;
-        }
-        &__portfolio {
-            font-size: 1.1vw;
         }
     }
 }
