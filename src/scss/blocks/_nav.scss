@@ -1,0 +1,39 @@
+.nav {
+    display: none;
+    @media (orientation: landscape), screen and (min-width: $desktop) {
+        transition: opacity .4s cubic-bezier(.455, .03, .515, .955);
+        transition-delay: 0.4s;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        right: -0.8vw;
+        transform: translateY(-50%);
+        &__item {
+            font-size: 0.53vw;
+            line-height: 1.33em;
+            letter-spacing: 0.089em;
+            color: #9b9b9b;
+            text-align: right;
+            text-decoration: none;
+            &:hover {
+                color: black;
+            }
+        }
+        &__item~&__item {
+            margin-top: 1.4em;
+        }
+    }
+    @media (max-width: $tablet) and (orientation: landscape),
+    (device-width: 1366px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape),
+    (min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+        right: -2.15vw;
+        &__item {
+            font-size: 1.1vw;
+        }
+    }
+}

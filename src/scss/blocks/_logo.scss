@@ -1,0 +1,43 @@
+.logo {
+    width: 27.14vmin;
+    padding-top: calc(var(--vh, 1vh) * 8.78);
+    height: auto; // -webkit-transform: translateZ(0); //to remove jumping due to pixel rounding during transition in crome
+    cursor: pointer;
+    background-color: white;
+    text-align: center;
+    &__svg {
+        width: 100%;
+        height: 100%;
+        .st0 {
+            fill: none;
+            stroke: #000000;
+        }
+    }
+    @media (orientation: landscape),
+    screen and (min-width: $desktop) {
+        z-index: 1;
+        width: 100%;
+        background-color: transparent; // height: 100%;
+        margin: 0;
+        padding: 0;
+        pointer-events: none;
+        &__wrapper {
+            width: 4.5vw;
+        }
+        &__svg {
+            height: auto;
+        }
+    }
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait),
+    (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+        padding-top: 11.7vmin;
+        width: 24.7vmin;
+    }
+    @media (max-width: $tablet) and (orientation: landscape),
+    (device-width: 1366px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape),
+    (min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+        &__wrapper {
+            width: 9.36vw;
+        }
+    }
+}

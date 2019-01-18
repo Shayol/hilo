@@ -1,0 +1,75 @@
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 250%;
+    background-position: 50%;
+    &__content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        &\--right {
+            display: block;
+        }
+    }
+    @media (orientation: landscape),
+    screen and (min-width: $desktop) {
+        &__content {
+            display: block;
+            height: 100%;
+            flex-grow: 1;
+        }
+        &__background {
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: 300%;
+            background-position: 50%;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity .85s cubic-bezier(.455, .03, .515, .955);
+            &\--1 {
+                opacity: 1;
+                background-color: white;
+            }
+            &\--2 {}
+            &\--3 {
+                opacity: 0;
+                background-color: black;
+                animation: border-fade 3.55s cubic-bezier(.455, .03, .515, .955);
+                transition: initial;
+            }
+        }
+    }
+    @media(device-width: 1366px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape),
+    (min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+        &__background\--3 {
+            animation: initial;
+        }
+    }
+}
+
+@keyframes border-fade {
+    0% {
+        opacity: 0;
+    }
+    23.9437% {
+        opacity: 1;
+    }
+    76.0563% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

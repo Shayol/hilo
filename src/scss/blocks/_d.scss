@@ -1,0 +1,346 @@
+.d {
+    &__scene {
+        width: 100%;
+        height: 100%;
+    }
+    &__cube {
+        width: 100%;
+        height: 100%;
+    }
+    &__cube-face {
+        display: none;
+    }
+    &__cube-face\--back {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: white;
+    }
+    @media (orientation: landscape),
+    screen and (min-width: $desktop) {
+        &__scene {
+            width: 100%;
+            height: 100%;
+        }
+        &__cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform .85s cubic-bezier(.455, .03, .515, .955);
+            -webkit-font-smoothing: subpixel-antialiased;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &\--big {
+                transform: scale(2.08);
+                .column-left {
+                    z-index: 1;
+                    opacity: 1;
+                }
+                .logo {
+                    pointer-events: auto;
+                }
+                .artist {
+                    display: block;
+                    z-index: 11;
+                    opacity: 1;
+                }
+                .column-right {
+                    display: flex;
+                    z-index: 11;
+                    opacity: 1;
+                }
+                .slider__content {
+                    z-index: 1;
+                }
+            }
+        }
+        &__cube-face {
+            display: block;
+            position: absolute;
+            background-color: transparent;
+            transition: width 0.85s ease-out, height 0.85s ease-out, top 0.85s ease-out, left 0.85s ease-out;
+            &::before,
+            &::after {
+                transition: width 0.85s ease-out, height 0.85s ease-out, top 0.85s ease-out;
+            }
+        }
+        &__cube-face\--top-right {
+            width: calc(25% + var(--edge-width, 5px));
+            height: calc(25% + var(--edge-width, 5px));
+            top: 0;
+            right: 0;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
+                border-top: 25vh solid white;
+                border-right: 25vw solid transparent;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: var(--edge-width, 5px);
+                right: 0;
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
+                border-bottom: 25vh solid white;
+                border-left: 25vw solid transparent;
+            }
+        }
+        &__cube-face\--back {
+            align-items: stretch;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            height: 50%;
+            position: relative;
+            border: var(--edge-width, 5px) solid transparent;
+            transition: border 0.85s ease-out;
+            background-color: white;
+            background-clip: padding-box;
+            padding: 4.9vmin 6.1vmin 4.9vmin 6.1vmin;
+        }
+        &__cube-face\--top-left {
+            width: calc(25% + var(--edge-width, 5px));
+            height: calc(25% + var(--edge-width, 5px)); // transition: width 0.85s linear, height 0.85s linear;
+            left: 0;
+            top: 0;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
+                border-top: 25vh solid white;
+                border-left: 25vw solid transparent;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: var(--edge-width, 5px);
+                left: 0;
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
+                border-bottom: 25vh solid white;
+                border-right: 25vw solid transparent;
+            }
+        }
+        &__cube-face\--bottom-left {
+            width: calc(25% + var(--edge-width, 5px));
+            height: calc(25% + var(--edge-width, 5px));
+            bottom: 0;
+            left: 0;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
+                border-top: 25vh solid white;
+                border-right: 25vw solid transparent;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: var(--edge-width, 5px);
+                right: 0;
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
+                border-bottom: 25vh solid white;
+                border-left: 25vw solid transparent;
+            }
+        }
+        &__cube-face\--bottom-right {
+            width: calc(25% + var(--edge-width, 5px));
+            height: calc(25% + var(--edge-width, 5px));
+            bottom: 0;
+            right: 0;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
+                border-top: 25vh solid white;
+                border-left: 25vw solid transparent;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: var(--edge-width, 5px);
+                left: 0;
+                width: calc(100% - var(--edge-width, 5px));
+                height: calc(100% - var(--edge-width, 5px));
+                border-bottom: 25vh solid white;
+                border-right: 25vw solid transparent;
+            }
+        }
+        &__cube-face\--middle-left {
+            width: 25%;
+            height: calc(50% - 2 * var(--edge-width, 5px));
+            background-color: white;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            top: calc(25% + var(--edge-width, 5px));
+            left: 0;
+            &::before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: 0;
+                height: 2px;
+                width: calc(100% - 2px);
+                background-color: white;
+                z-index: 30;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                height: 2px;
+                width: calc(100% - 2px);
+                background-color: white;
+                z-index: 30;
+            }
+        }
+        &__cube-face\--middle-right {
+            width: 25%;
+            height: calc(50% - 2 * var(--edge-width, 5px));
+            background-color: white;
+            top: calc(25% + var(--edge-width, 5px));
+            right: 0;
+            &::before {
+                content: '';
+                position: absolute;
+                top: -1px;
+                right: 0;
+                height: 2px;
+                width: calc(100% - 2px);
+                background-color: white;
+                z-index: 30;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                right: 0;
+                height: 2px;
+                width: calc(100% - 2px);
+                background-color: white;
+                z-index: 30;
+            }
+        }
+        &__cube-face\--middle-top {
+            width: calc(50% - 2 * var(--edge-width, 5px));
+            height: 25%;
+            background-color: white;
+            top: 0;
+            left: calc(25% + var(--edge-width, 5px));
+            &::before {
+                content: '';
+                position: absolute;
+                left: -2px;
+                height: calc(100% - 2px);
+                width: 4px;
+                background-color: white;
+                z-index: 30;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                right: -2px;
+                height: calc(100% - 2px);
+                width: 4px;
+                background-color: white;
+                z-index: 30;
+            }
+        }
+        &__cube-face\--middle-bottom {
+            width: calc(50% - 2 * var(--edge-width, 5px));
+            height: 25%;
+            background-color: white;
+            bottom: 0;
+            left: calc(25% + var(--edge-width, 5px));
+            &::before {
+                content: '';
+                position: absolute;
+                left: -2px;
+                height: calc(100% - 2px);
+                width: 4px;
+                background-color: white;
+                bottom: 0;
+                z-index: 30;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: -2px;
+                height: calc(100% - 2px);
+                width: 4px;
+                background-color: white;
+                z-index: 30;
+            }
+        }
+    }
+    @media (max-width: $tablet) and (orientation: landscape),
+    (device-width: 1366px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape),
+    (min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+        &__cube {
+            transition: initial;
+            background-color: white;
+            .column-left {
+                z-index: 1;
+                opacity: 1;
+            }
+            .logo {
+                pointer-events: auto;
+            }
+            .artist {
+                display: block;
+                z-index: 11;
+                opacity: 1;
+            }
+            .column-right {
+                display: flex;
+                z-index: 11;
+                opacity: 1;
+            }
+            .slider__content {
+                z-index: 1;
+            }
+        }
+        &__cube-face {
+            display: none;
+            transition: initial;
+            &:before,
+            &:after {
+                transition: initial;
+            }
+            &\--back {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                padding: 9vmin 11vmin;
+                border: none;
+            }
+        }
+        &__cube-face\--back:before {
+            animation: none;
+            border: none;
+            background-clip: border-box;
+        }
+    }
+}
